@@ -3,8 +3,8 @@ from so101_utils import load_calibration, setup_motors, move_to_pose
 
 
 # Variables del SO101-ARM tanto Leader como Follower
-FOLLOWER_PORT = "COM5"     # Puerto del follower
-LEADER_PORT = "COM4"       # Puerto del leader
+FOLLOWER_PORT = "COM5"     # Puerto del follower 
+LEADER_PORT = "COM4"       # Puerto del leader #/dev/ttyACM0 en Linux
 FOLLOWER_NAME = "so101_follower"           # calibration_files/so101_follower.json
 LEADER_NAME = "so101_leader"               # calibration_files/so101_leader.json
 
