@@ -23,3 +23,7 @@ outputs/
 # Sistema
 .DS_Store
 Thumbs.db
+
+#Archivos sensibles 
+hardware_code/images/token_huggingface.jpg
+hardware_code/images/token_terminal.jpg
