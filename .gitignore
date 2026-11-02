@@ -1,0 +1,25 @@
+# LeRobot se clona aparte (ver README)
+lerobot/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Datasets y salidas pesadas
+datasets/
+outputs/
+*.mp4
+*.parquet
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Sistema
+.DS_Store
+Thumbs.db
