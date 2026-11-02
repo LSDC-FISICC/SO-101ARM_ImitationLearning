@@ -19,8 +19,8 @@ cd <tu-repositorio>
 ## 2. Crear el entorno de conda
 
 ```bash
-conda create -y -n lerobot python=3.12
-conda activate lerobot
+conda create -y -n so101 python=3.12
+conda activate so101
 ```
 
 > Este paso de activación se repite cada vez que abras una terminal nueva.
