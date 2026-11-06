@@ -1,0 +1,9 @@
+lerobot-record --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=so101_follower --robot.cameras="{ wrist: {type: opencv, index_or_path: /dev/video4, width: 640, height: 480, fps: 30}, top: {type: opencv, index_or_path: /dev/video2, width: 640, height: 480, fps: 30}}" --teleop.type=so101_leader --teleop.port=/dev/ttyACM1 --teleop.id=so101_leader --display_data=true --dataset.repo_id=${HF_USER}/training-record2 --dataset.root=$HOME/.cache/huggingface/lerobot/${HF_USER}/training-record2 --dataset.no_stamp=true --dataset.num_episodes=20 --dataset.episode_time_s=20 --dataset.reset_time_s=15 --dataset.single_task="Grasp green cube" --dataset.streaming_encoding=true --dataset.encoder_threads=2 --resume=true
+
+
+lerobot-train --dataset.repo_id=${HF_USER}/training-record2 --policy.type=act --output_dir=outputs/train/train_ACT_2 --job_name=act_training_so101 --policy.device=cuda --trackio.enable=true --steps=20000 --batch_size=8  --policy.repo_id=${HF_USER}/train_act_policy2
+
+lerobot-rollout   --strategy.type=base   --policy.path=SebRivGar/train_act_policy2   --robot.type=so101_follower   --robot.port=/dev/ttyACM0   --robot.id=so101_follower   --robot.cameras="{ wrist: {type: opencv, index_or_path: 1, width: 640, height: 480, fps: 30}, top: {type: opencv, index_or_path: 3, width: 640, height: 480, fps: 30}}"   --task="Grasp green cube"   --duration=60 
+
+lerobot-teleoperate --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=so101_follower --robot.cameras="{ wrist: {type: opencv, index_or_path: /dev/video0, width: 640, height: 480, fps: 30}, top: {type: opencv, index_or_path: /dev/video2, width: 640, height: 480, fps: 30}}" --teleop.type=so101_leader --teleop.port=/dev/ttyACM1 --teleop.id=so101_leader --display_data=true
+
