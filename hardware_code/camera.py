@@ -2,6 +2,8 @@ from lerobot.cameras.opencv import OpenCVCamera, OpenCVCameraConfig
 from lerobot.cameras import ColorMode, Cv2Rotation
 
 # Referencia del código: https://huggingface.co/docs/lerobot/main/en/cameras
+# camera gripper /dev/video0
+# camera top /dev/video2
 # Construct an `OpenCVCameraConfig` with your desired FPS, resolution, color mode, and rotation.
 config = OpenCVCameraConfig(
     index_or_path=2,
